@@ -3,10 +3,10 @@ import { addTask } from '../main.js'
 const taskListElement = document.getElementById('task-list')
 const taskListNewTaskButton = document.getElementById('task-list-new-task-button')
 
-taskListNewTaskButton.onclick = () => {
+taskListNewTaskButton.onclick = async () => {
   const title = window.prompt('Task title')
   if (title) {
-    addTask(title)
+    await addTask(title)
   }
 }
 
