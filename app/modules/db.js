@@ -11,7 +11,7 @@ console.debug('Database is opened')
 export async function getState () {
   const state = await db.get('mintee', 'state')
   if (state === undefined) {
-    console.debug('No state in the databae')
+    console.debug('No state in the database')
     return {
       tasks: {}
     }

@@ -14,6 +14,15 @@ export async function addTask (title) {
   state.tasks[title] = {}
   console.debug(`Added task "${title}"`)
 
-  await setState(state)
+  await changeTask(title)
   renderTaskList(state)
+}
+
+export async function changeTask (title) {
+  const oldTitle = state.currentTask
+
+  state.currentTask = title
+  console.debug(`Current task is changed from "${oldTitle}" to "${title}"`)
+
+  await setState(state)
 }
