@@ -17,9 +17,9 @@ taskList.onchange = async () => {
 export default function renderTaskList (state) {
   console.debug('Rendering task list')
 
-  taskList.innerHTML = (() => `
-        ${Object.keys(state.tasks).map((e) => `
-            <option ${e === state.currentTask ? 'selected' : ''}>${e}</option>
-        `).join('')}
-    `)()
+  taskList.innerHTML = `
+    ${Object.keys(state.tasks).map((e) => `
+      <option ${e === state.currentTask ? 'selected' : ''}>${e}</option>
+    `).join('')}
+  `
 }
