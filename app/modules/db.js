@@ -8,13 +8,10 @@ const db = await openDB('db', 1, {
 })
 console.debug('Database is opened')
 
-export async function getState () {
-  const state = await db.get('mintee', 'state')
-  console.debug('Got state from the database')
-  return state
+export async function load () {
+  return await db.get('mintee', 'state')
 }
 
-export async function setState (state) {
+export async function save (state) {
   await db.put('mintee', state, 'state')
-  console.debug('Saved state to the database')
 }
